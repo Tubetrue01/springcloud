@@ -1,0 +1,17 @@
+server:
+  port: 9091
+spring:
+  application:
+    name: eureka-server
+eureka:
+  instance:
+    hostname: localhos
+    appname: eureka-server
+  client:
+    service-url:
+      defaultZone: http://localhost:9091/eureka
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

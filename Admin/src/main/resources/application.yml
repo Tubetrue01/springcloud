@@ -1,0 +1,17 @@
+server:
+  port: 2021
+spring:
+  application:
+    name: admin
+eureka:
+  instance:
+    appname: admin
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:9091/eureka
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
