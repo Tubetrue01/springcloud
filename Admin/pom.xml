@@ -9,9 +9,9 @@
 		<relativePath/>
 	</parent>
 	<groupId>org.tubetrue01</groupId>
-	<artifactId>admin</artifactId>
+	<artifactId>Admin</artifactId>
 	<version>v1.0</version>
-	<name>admin</name>
+	<name>Admin</name>
 	<description>Springboot Admin</description>
 
 	<properties>

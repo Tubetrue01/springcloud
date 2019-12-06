@@ -1,0 +1,38 @@
+server:
+  port: 5051
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      #      routes:
+      #        - id: neo_route
+      #          uri: http://ityouknow.com
+      #          predicates:
+      #            - Path=/spring-cloud
+      #          filters:
+      #            - name: RequestRateLimiter
+      #              args:
+      #                redis-rate-limiter.replenishRate: 2
+      #                redis-rate-limiter.burstCapacity: 4
+      #                key-resolver: "#{@userKeyResolver}"
+
+      #            - After=2019-12-03T11:03:00+08:00[Asia/Shanghai]
+      discovery:
+        locator:
+          enabled: true
+eureka:
+  instance:
+    appname: gateway
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:9091/eureka
+logging:
+  level:
+    org.springframework.cloud.gateway: debug
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
