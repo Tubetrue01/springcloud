@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
@@ -22,6 +22,7 @@
         <eureka-server.version>2.2.0.RELEASE</eureka-server.version>
         <eureka-client.version>2.2.0.RELEASE</eureka-client.version>
         <openfeign.version>2.2.0.RELEASE</openfeign.version>
+        <gateway.version>2.2.0.RELEASE</gateway.version>
         <log4j.version>2.1.6.RELEASE</log4j.version>
         <log4j.web.version>2.12.1</log4j.web.version>
         <common.version>v1.0</common.version>
@@ -33,6 +34,7 @@
         <module>Admin</module>
         <module>Provider</module>
         <module>Consumer</module>
+        <module>Gateway</module>
     </modules>
 
     <dependencies>
@@ -66,6 +68,7 @@
             <artifactId>spring-boot-starter-log4j2</artifactId>
             <version>${log4j.version}</version>
         </dependency>
+
         <!-- Log4j web -->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
@@ -128,6 +131,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-gateway</artifactId>
+                <version>${gateway.version}</version>
             </dependency>
 
             <!-- SpringCloud Bus -->
