@@ -1,13 +1,13 @@
-package org.tubetrue01.userProvider;
+package org.tubetrue01.provider1;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class UserProviderApplication {
+public class Provider1Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(UserProviderApplication.class, args);
+		SpringApplication.run(Provider1Application.class, args);
 	}
 
 }
