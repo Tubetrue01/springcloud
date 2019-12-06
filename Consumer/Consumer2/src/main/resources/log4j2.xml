@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Status behind Configuration, this is used to set the internal information output of log4j2, can not be set, when set to trace, you will see various detailed output inside log4j2.
+    monitorInterval：Log4j can automatically detect the modified configuration file and reconfigure itself, setting the interval seconds.
+-->
+<configuration status="info" monitorInterval="30">
+    <!-- Define all appenders first -->
+    <appenders>
+        <!-- The configuration of this output console -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <!-- The console only outputs level and above information (onMatch), other direct rejections (onMismatch) -->
+            <ThresholdFilter level="trace" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%-4p] (%-30F:%L)---%m%n"/>
+        </Console>
+        <!-- This will print out all the information, each time the size exceeds the size, the size of the log will be automatically stored in the folder created by the year-month and compressed, as an archive -->
+        <RollingFile name="RollingFile" fileName="/Users/tubetrue01/Desktop/logs/info.log" filePattern="/Users/tubetrue01/Desktop/logs/%d{yyyy-MM}/%d{yyyy-MM-dd}-%i.log.tar.gz" append="true">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%-4p] (%-30F:%L)---%m%n"/>
+            <Policies>
+                <!--<SizxeBasedTriggeringPolicy size="50MB"/>-->
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+            <!-- If the DefaultRolloverStrategy property is not set, the default is up to 7 files in the same folder. Here, 20 is set. -->
+            <DefaultRolloverStrategy max="20"/>
+        </RollingFile>
+    </appenders>
+    <!-- Define the logger, the appender will only take effect if the appender is defined and imported. -->
+    <loggers>
+        <!-- Create a default root logger -->
+        <root level="info">
+            <appender-ref ref="RollingFile"/>
+            <appender-ref ref="Console"/>
+        </root>
+    </loggers>
+</configuration>

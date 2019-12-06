@@ -4,11 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.tubetrue01</groupId>
-		<artifactId>Provider</artifactId>
+		<artifactId>Consumer</artifactId>
 		<version>v1.0</version>
 	</parent>
-	<artifactId>Provider1</artifactId>
+	<artifactId>Consumer1</artifactId>
 	<version>v1.0</version>
-	<name>Provider1</name>
-	<description>A provider!</description>
+	<name>Consumer1</name>
+
+
 </project>

@@ -21,6 +21,7 @@
         <spring-cloud.version>Hoxton.RC2</spring-cloud.version>
         <eureka-server.version>2.2.0.RELEASE</eureka-server.version>
         <eureka-client.version>2.2.0.RELEASE</eureka-client.version>
+        <openfeign.version>2.2.0.RELEASE</openfeign.version>
         <log4j.version>2.1.6.RELEASE</log4j.version>
         <log4j.web.version>2.12.1</log4j.web.version>
         <common.version>v1.0</common.version>
@@ -31,6 +32,7 @@
         <module>Common</module>
         <module>Admin</module>
         <module>Provider</module>
+        <module>Consumer</module>
     </modules>
 
     <dependencies>
@@ -162,6 +164,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-openfeign</artifactId>
+                <version>${openfeign.version}</version>
             </dependency>
             <!-- ZipKin Client -->
             <dependency>

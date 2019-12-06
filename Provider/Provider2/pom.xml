@@ -7,9 +7,9 @@
 		<artifactId>Provider</artifactId>
 		<version>v1.0</version>
 	</parent>
-	<artifactId>provider</artifactId>
+	<artifactId>Provider2</artifactId>
 	<version>v1.0</version>
-	<name>provider</name>
+	<name>Provider2</name>
 	<description>Another provider!</description>
 
 </project>
