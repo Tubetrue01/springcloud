@@ -1,0 +1,31 @@
+server:
+  port:  3031
+spring:
+  application:
+    name: sleuth-zipkin-rabbitmq
+
+zipkin:
+  collector:
+    rabbitmq:
+      addresses: localhost:5672
+      password: 123456
+      username: admin
+      queue: zipkin
+
+eureka:
+  instance:
+    hostname: localhost
+    appname: sleuth-zipkin-rabbitmq
+  client:
+    service-url:
+      defaultZone: http://localhost:9091/eureka
+
+management:
+  metrics:
+    web:
+      server:
+        auto-time-requests: false
+  endpoints:
+    web:
+      exposure:
+        include: '*'
