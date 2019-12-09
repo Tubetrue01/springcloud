@@ -17,12 +17,22 @@
 
     <properties>
         <spring.web.version>2.2.1.RELEASE</spring.web.version>
+        <actuator.version>2.2.1.RELEASE</actuator.version>
         <java.version>11</java.version>
         <spring-cloud.version>Hoxton.RC2</spring-cloud.version>
         <eureka-server.version>2.2.0.RELEASE</eureka-server.version>
         <eureka-client.version>2.2.0.RELEASE</eureka-client.version>
         <openfeign.version>2.2.0.RELEASE</openfeign.version>
         <gateway.version>2.2.0.RELEASE</gateway.version>
+        <hystrix.version>2.2.0.RELEASE</hystrix.version>
+        <hystrix.stream.version>2.2.0.RELEASE</hystrix.stream.version>
+        <hystrix.dashboard.version>2.2.0.RELEASE</hystrix.dashboard.version>
+        <turbine.stream.version>2.2.0.RELEASE</turbine.stream.version>
+        <rabbit.stream.version>2.2.0.RELEASE</rabbit.stream.version>
+        <zipkin.version>2.2.0.RELEASE</zipkin.version>
+        <springcloud.config.version>2.2.0.RELEASE</springcloud.config.version>
+        <springcloud.config.server.version>2.2.0.RELEASE</springcloud.config.server.version>
+        <springcloud.bus.version>2.2.0.RELEASE</springcloud.bus.version>
         <log4j.version>2.1.6.RELEASE</log4j.version>
         <log4j.web.version>2.12.1</log4j.web.version>
         <common.version>v1.0</common.version>
@@ -35,14 +45,13 @@
         <module>Provider</module>
         <module>Consumer</module>
         <module>Gateway</module>
+        <module>TurbineRabbitMQ</module>
+        <module>SleuthZipkin</module>
+        <module>Config</module>
     </modules>
 
     <dependencies>
-        <!-- Actuator -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
+
 
         <!-- SpringCloud Start -->
         <dependency>
@@ -77,12 +86,12 @@
         </dependency>
 
         <!-- SpringBoot Devtools-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
-            <optional>true</optional>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-devtools</artifactId>-->
+<!--            <scope>runtime</scope>-->
+<!--            <optional>true</optional>-->
+<!--        </dependency>-->
 
         <!-- Lombok -->
         <dependency>
@@ -101,6 +110,13 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- Actuator -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-actuator</artifactId>
+                <version>${actuator.version}</version>
+            </dependency>
+
             <!-- Eureka Server -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
@@ -119,12 +135,14 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-config-server</artifactId>
+                <version>${springcloud.config.version}</version>
             </dependency>
 
             <!-- SpringCloud Config Client -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-config</artifactId>
+                <version>${springcloud.config.server.version}</version>
             </dependency>
 
             <!-- SpringCloud Gateway -->
@@ -137,31 +155,36 @@
             <!-- SpringCloud Bus -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-bus</artifactId>
+                <artifactId>spring-cloud-bus-amqp</artifactId>
+                <version>${springcloud.bus.version}</version>
             </dependency>
 
             <!-- Hystrix -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+                <version>${hystrix.version}</version>
             </dependency>
 
             <!-- Hystrix-Stream -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-netflix-hystrix-stream</artifactId>
+                <artifactId>spring-cloud-netflix-hystrix-stream</artifactId>
+                <version>${hystrix.stream.version}</version>
             </dependency>
 
             <!-- Turbine Stream -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-netflix-turbine-stream</artifactId>
+                <version>${turbine.stream.version}</version>
             </dependency>
 
             <!-- Hystrix Dashboard -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
+                <version>${hystrix.dashboard.version}</version>
             </dependency>
 
             <!-- Open Feign -->
@@ -174,6 +197,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-zipkin</artifactId>
+                <version>${zipkin.version}</version>
             </dependency>
 
             <!-- SpringCloud -->
@@ -183,6 +207,13 @@
                 <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <!-- RabbitMQ -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-stream-rabbit</artifactId>
+                <version>${rabbit.stream.version}</version>
             </dependency>
 
             <!-- SpringBoot Web -->
