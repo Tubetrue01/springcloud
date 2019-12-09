@@ -31,4 +31,11 @@ public class UserController {
         log.info("-==Enter Consumer1==-");
         return this.userServiceRemote.userInfo();
     }
+
+    @GetMapping("/test")
+    public String tesInfo() {
+        log.info("-==Enter Consumer1==-");
+        return this.userServiceRemote.testInfo();
+    }
+
 }

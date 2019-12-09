@@ -1,0 +1,12 @@
+server:
+  port: 4041
+spring:
+  application:
+    name: config-server
+eureka:
+  instance:
+    hostname: localhost
+    appname: config-server
+  client:
+    service-url:
+      defaultZone: http://localhost:9091/eureka

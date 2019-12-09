@@ -3,30 +3,31 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.tubetrue01</groupId>
         <artifactId>Cloud</artifactId>
+        <groupId>org.tubetrue01</groupId>
         <version>v1.0</version>
     </parent>
-    <artifactId>EurekaServer</artifactId>
+    <artifactId>Config</artifactId>
     <version>v1.0</version>
-    <name>EurekaServer</name>
-    <description>Eureka Server Center</description>
-
-    <properties>
-        <java.version>11</java.version>
-    </properties>
+    <name>Config</name>
 
     <dependencies>
-        <!-- Actuator -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-
-        <!-- Eureka Server -->
+        <!-- AMQP -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+        </dependency>
+        <!-- Config Server -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-server</artifactId>
+        </dependency>
+        <!-- Eureka Client -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
     </dependencies>
+
+
 </project>

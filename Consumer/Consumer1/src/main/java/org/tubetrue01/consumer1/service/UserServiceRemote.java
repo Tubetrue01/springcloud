@@ -20,4 +20,7 @@ public interface UserServiceRemote {
 
     @GetMapping("/user/info")
     People userInfo();
+
+    @GetMapping("/user/test")
+    String testInfo();
 }

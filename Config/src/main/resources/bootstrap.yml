@@ -1,0 +1,30 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: http://192.168.1.88/java.etc/SpringCloudConfig.git
+          search-paths: config
+          username: Tubetrue01
+          password: 0000000
+    loadbalancer:
+      ribbon:
+        enabled: false
+    bus:
+      trace:
+        enabled: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: 123456
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+
+
+

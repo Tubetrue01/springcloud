@@ -1,0 +1,38 @@
+spring:
+  cloud:
+    config:
+      name: boot                  # Name of your application from git (boot-dev.yml)
+      profile: dev
+      #      label: config              # /label/applicationName-[dev...].yml
+      #      uri: http://localhost:5051/
+      discovery:
+        service-id: config-server  # ApplicationName of config
+        enabled: true
+    bus:
+      trace:
+        enabled: true
+
+  sleuth:
+    sampler:
+      probability: 1.0
+  rabbitmq:
+    host: localhost
+    username: admin
+    password: 123456
+  zipkin:
+    rabbitmq:
+      queue: zipkin
+    sender:
+      type: rabbit
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+eureka:
+  instance:
+    hostname: localhost
+    appname: provider
+  client:
+    service-url:
+      defaultZone: http://localhost:9091/eureka

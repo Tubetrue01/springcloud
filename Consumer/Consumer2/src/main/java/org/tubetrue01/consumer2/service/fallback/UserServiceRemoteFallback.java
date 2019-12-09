@@ -21,4 +21,9 @@ public class UserServiceRemoteFallback implements UserServiceRemote {
         log.warn("-==You enter the fallback of consumer2==-");
         return new People("Consumer2 Fallback", 404);
     }
+
+    @Override
+    public String testInfo() {
+        return "Consumer 2 fallback";
+    }
 }

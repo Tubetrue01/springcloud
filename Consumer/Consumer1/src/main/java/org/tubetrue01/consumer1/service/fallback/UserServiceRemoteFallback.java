@@ -1,6 +1,7 @@
 package org.tubetrue01.consumer1.service.fallback;
 
 import lombok.extern.log4j.Log4j2;
+import org.springframework.stereotype.Component;
 import org.tubetrue01.consumer1.service.UserServiceRemote;
 import org.tubetrue01.pojo.People;
 
@@ -13,10 +14,17 @@ import org.tubetrue01.pojo.People;
  * Description :
  */
 @Log4j2
+@Component
 public class UserServiceRemoteFallback implements UserServiceRemote {
     @Override
     public People userInfo() {
         log.warn("-==You enter the fallback of consumer1==-");
         return new People("Consumer1 Fallback", 404);
     }
+
+    @Override
+    public String testInfo() {
+        return "Consumer 1 fallback";
+    }
+
 }
