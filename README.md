@@ -10,6 +10,7 @@
 * SpringBootAdmin: 2.1.5 & SpringCloud: Greenwich.SR4 & SpringBoot: 2.1.10.Release
 * SpringCloud Gateway: 2.2.0.Release
 * SpringCloud TurbineStream: 2.2.0.Release
+* SpringCloud SleuthZipkin: SpringBoot:SpringBoot: 2.1.10.Release, SpringCloud: Greenwich.SR4 &  Zipkin server、UI、RabbitCollector：2.12.3
 
 ### Port
 * EurekaServer: 9091
@@ -20,4 +21,5 @@
 * Consumer2: 7072
 * Gateway: 5051
 * TurbineDashboard: 6061
+* Sleuth：3031
 ### reading......
